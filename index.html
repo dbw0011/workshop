@@ -2,8 +2,6 @@
 <!--PASTE ROLLBAR SNIPPET OVER THIS COMMENT-->
   <script>
     function validateFirstName() {
-		var broken = madeUpFunction("value");
-		alert(broken);
       var firstName = document.forms["subscriber_form"]["fname"].value;
       if (firstName == "") {
 		  
@@ -11,9 +9,9 @@
       }
       return;
     }
-	s
+	
     function validateLastName() {
-      doSomething(variable);
+      var status = doSomething(variable);
     }
 
     function validateEmail() {
@@ -25,22 +23,10 @@
     }
 
     function validateForm() {
-      errors = [];
-      const firstNameRes = validateFirstName();
-      if (firstNameRes) { errors.push(firstNameRes) }
-      const lastNameRes = validateLastName();
-      if (lastNameRes) { errors.push(lastNameRes) }
-      const emailRes = validateEmail();
-      if (emailRes) { errors.push(emailRes) }
-      const numberRes = validateNumber()
-      if (numberRes) { errors.push(numberRes) }
-
-      if (errors.length > 0) {
-        alert(errors.join("\n"));
-      } else {
-        alert("Success!");
-      }
-      return false; 
+		validateFirstName();
+		validateLastName();
+		validateEmail();
+		validateNumber();
     }
   </script>
 </head>
