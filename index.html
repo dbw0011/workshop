@@ -1,0 +1,87 @@
+<html>
+  <head>
+   <!--PASTE ROLLBAR CODE SNIPPET OVER THIS COMMENT -->
+    <script>
+      function callServer() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/sample', true);
+        xhr.onload = function() {
+          console.log('Got: ', xhr.response);
+        };
+        xhr.onreadystatechange = function() {
+          if (this.readyState === 4) {
+            console.log('Done!');
+          }
+        };
+        xhr.send(null);
+      }
+    </script>
+
+    <script>
+
+      // Uncaught
+
+      // Unhandled Rejection
+      function uncaught() {
+        throw 'Uncaught';
+      }
+
+      // Occurrence Levels
+      function debug() {
+        Rollbar.debug("Debug Level");
+      }
+
+      function info() {
+        Rollbar.info("Info Level");
+      }
+
+      function warning() {
+        Rollbar.warning("Warning Level");
+      }
+
+      function error() {
+        Rollbar.error("Error Level");
+      }
+
+      function critical() {
+        Rollbar.critical("Critical Level");
+      }
+
+      function onClick() {
+        console.log('Testing People');
+        Rollbar.configure({
+          payload: {
+            person: {
+              id: document.getElementById('id').value, // required
+              username: document.getElementById('username').value,
+              email: document.getElementById('email').value,
+            }
+          }
+        });
+      }
+    </script>
+    </head>
+  <body>
+    <br>
+    <div class="some input stuff">
+      People Tracking
+      <div>
+        ID: <input id="id" type="text" />
+        Username: <input id="username" type="text" />
+        Email: <input id="email" type="text" />
+        <input type="submit" value="Update Person" onclick="onClick()">
+      </div>
+    </div>
+    <br>
+    <br>
+    Send Errors
+    <br>
+    <button onclick="debug();">Debug</button>
+    <button onclick="info();">Info</button>
+    <button onclick="warning();">Warning</button>
+    <button onclick="error();">Error</button>
+    <button onclick="critical();">Critical</button>
+    <button onclick="uncaught();">Uncaught</button>
+    <br>
+  </body>
+</html>
