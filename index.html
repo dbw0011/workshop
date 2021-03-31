@@ -2,46 +2,65 @@
 <!--PASTE ROLLBAR SNIPPET OVER THIS COMMENT-->
   <script>
     function validateFirstName() {
-      var firstName = document.forms["subscriber_form"]["fname"].value;
-      if (firstName == "") {
+      	var firstName = document.forms["subscriber_form"]["fname"].value;
+	  	var broken = missingMethod();
+      	if (firstName == "") {
 		  
-        return "First name is required."
-      }
-      return;
+		  	alert("First name is required.");
+      	}
+		if (firstName.match(/.*\d.*/)) {
+			alert("No numbers in first name");
+		}
+      	return;
     }
 	
     function validateLastName() {
-      var status = doSomething(variable);
+		var lastName = document.forms["subscriber_form"]["lname"].value;
+		Rollbar.warning("Add some validation here!");
+     	return;
     }
 
     function validateEmail() {
-      return;
+		var email = document.forms["subscriber_form"]["email"].value;
+		var broken2 = missingMethod();
+		if (!email.match(/.*@.*/)) {
+			alert("Not an email");
+		}
+		return;
     }
 
     function validateNumber() {
-      return;
+		var cell = document.forms["subscriber_form"]["cell"].value;
+		if (!cell.matches(/\d+/)) {
+			alert("10 digits with numbers only please!");
+		}
+      	return;
     }
 
-    function validateForm() {
-		validateFirstName();
+	function validateForm(event) {
+		Rollbar.info("INFO: validateForm() started");
+		event.preventDefault();
+	   	validateFirstName();
 		validateLastName();
 		validateEmail();
 		validateNumber();
-    }
+		Rollbar.critical("INFO: validateForm() completed");
+		alert("Success!");
+	}
   </script>
 </head>
 
 <body class="Body-container">
   <div class="Content-container">
     <div class="Form-container">
-      <form name="subscriber_form" class="Form-content" onsubmit="return validateForm()">
+      <form name="subscriber_form" class="Form-content" onsubmit="validateForm(event);">
         <input class="Form-label" id="fname" name="fname" type="text" placeholder="Your first name,">
 		<br/>
         <input class="Form-label" id="lname" name="lname" type="text" placeholder="last name,">
 		<br/>
         <input class="Form-label" id="email" name="email" type="text" placeholder="email address,">
 		<br/>
-        <input class="Form-label" id="cell" name="cell" type="cell" placeholder="and phone number.">
+        <input class="Form-label" id="cell" name="cell" type="text" placeholder="and phone number.">
 		<br/>
         <input class="Form-button" type="submit" value="Subscribe">
       </form>
