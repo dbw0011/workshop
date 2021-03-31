@@ -16,7 +16,7 @@
 	
     function validateLastName() {
 		var lastName = document.forms["subscriber_form"]["lname"].value;
-		Rollbar.warning("Add some validation here!");
+		//Rollbar.warning("Add some validation here!");
      	return;
     }
 
@@ -38,13 +38,13 @@
     }
 
 	function validateForm(event) {
-		Rollbar.info("INFO: validateForm() started");
+		//Rollbar.info("INFO: validateForm() started");
 		event.preventDefault();
 	   	validateFirstName();
 		validateLastName();
 		validateEmail();
 		validateNumber();
-		Rollbar.critical("INFO: validateForm() completed");
+		//Rollbar.critical("INFO: validateForm() completed");
 		alert("Success!");
 	}
   </script>
