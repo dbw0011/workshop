@@ -2,7 +2,7 @@
 
 ### Instructions
 1. Download index.html or copy the raw file into a code/text editor
-2. Open the file using a browser and attempt to subscribe
+2. Open the file using a browser and attempt to use the subscription form
 3. Add Rollbar to your code by pasting the code snippet generated in the Browser JS project instructions
 4. Uncomment the Rollbar method calls on lines 19, 41, and 47
 5. Save the code changes to the text editor, refresh the page in the browser
