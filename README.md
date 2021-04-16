@@ -11,7 +11,7 @@
 8. Iterate as needed
 
 ### Notifications
-1. Go to [webhook.site](webhook.site) and copy the unique URL generated for your session
+1. Go to [webhook.site](https://webhook.site) and copy the unique URL generated for your session
 2. In Rollbar, navigate to Settings > \[project\] > Notifications
 3. Choose the Webhook option
 4. Paste your URL into the field at the top
