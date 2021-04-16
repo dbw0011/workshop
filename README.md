@@ -9,3 +9,12 @@
 6. Rollbar will now report errors to the web app - use your trial account to investigate the errors & pinpoint the root cause(s)
 7. Make code changes, save/refresh and test the changes to see if the errors are still reporting
 8. Iterate as needed
+
+### Notifications
+1. Go to [webhook.site] and copy the unique URL generated for your session
+2. In Rollbar, navigate to Settings > \[project\] > Notifications
+3. Choose the Webhook option
+4. Paste your URL into the field at the top
+5. Optional: send a test notification (this can be a good latency check, webhook.site can be a little slow to report new messages)
+6. Add the "Every Occurrence" template to your rule set
+7. Generate some occurrences, verify they are being received
