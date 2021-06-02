@@ -25,7 +25,7 @@ var _rollbarConfig = {
   <script>
     function validateFirstName() {
       	var firstName = document.forms["subscriber_form"]["fname"].value;
-	  	var broken = missingMethod();
+	  	//var broken = missingMethod();
       	if (firstName == "") {
 		  
 		  	alert("First name is required.");
@@ -59,7 +59,7 @@ var _rollbarConfig = {
 
     function validateNumber() {
 		var cell = document.forms["subscriber_form"]["cell"].value;
-		if (!cell.matches(/\d+/)) {
+		if (!cell.match(/\d+/)) {
 			alert("10 digits with numbers only please!");
 		}
       	return;
