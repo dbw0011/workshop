@@ -8,9 +8,9 @@
 5. Save the code changes to the text editor, refresh the page in the browser
 6. Rollbar will now report errors to the web app - use your trial account to investigate the errors & pinpoint the root cause(s)
 7. Make code changes, save/refresh and test the changes to see if the errors are still reporting
-8. Iterate as needed
+8. Iterate as needed to fix the code
 
-### Notifications
+### Optional: Notifications
 1. Go to [webhook.site](https://webhook.site) and copy the unique URL generated for your session
 2. In Rollbar, navigate to Settings > \[project\] > Notifications
 3. Choose the Webhook option
